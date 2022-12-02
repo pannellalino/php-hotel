@@ -72,19 +72,16 @@
     </tr>
   </thead>
   <tbody>
-    <ul>
-    <?php 
-      //ciclo l'array generale degli hotels
-      foreach($hotels as $hotel){
-        //ciclo ogni array contenuto dentro l'array generale
-        foreach($hotel as $key => $value){
-          //echo "$key => $value <br>";
-          //echo "<li>$key</li>"; 
-          echo "<li>$value</li>"; 
-        }
-      }
-      ?>
-    </ul>
+
+   <?php foreach($hotels as $hotel):  ?>
+    <tr>
+      <td><?php echo $hotel['name'] ?></td>
+      <td><?php echo $hotel['description'] ?></td>
+      <td><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
+      <td><?php echo $hotel['vote'] ?></td>
+      <td><?php echo $hotel['distance_to_center'] ?></td>
+    </tr>
+   <?php endforeach ?>
   </tbody>
 </table>
 </div>
